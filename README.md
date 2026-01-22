@@ -153,7 +153,7 @@ I created two A records to point both the root domain and www subdomain to my Az
 **Root Domain Record**:
 - **Type**: A Record
 - **Host**: @
-- **Value**: `<my-azure-vm-public-ip>`
+- **Value**: `<my-azure-20.64.152.30>`
 - **TTL**: Automatic
 
 **WWW Subdomain Record**:
@@ -185,7 +185,7 @@ Testing was crucial to ensure everything was working correctly at every level.
 First, I tested from within the VM itself to ensure Apache was serving my website correctly:
 ```bash
 curl http://localhost
-curl http://<azure-vm-public-ip>
+curl http://<20.64.152.30>
 ```
 
 Both commands returned my portfolio website's HTML, which was a great sign that Apache was configured properly and serving my files.
@@ -194,7 +194,7 @@ Both commands returned my portfolio website's HTML, which was a great sign that 
 
 From my local Ubuntu server, I tested accessing the site via the Azure VM's public IP address:
 ```bash
-curl http://<azure-vm-public-ip>
+curl http://<20.64.152.30>
 ```
 
 This also returned my website content, confirming that:
@@ -217,7 +217,7 @@ Success! Both commands returned my website content, confirming that my Namecheap
 Finally, I opened my web browser and navigated to:
 - `http://rilportfolio.study`
 - `http://www.rilportfolio.study`
-- `http://<azure-vm-ip>` (direct IP access)
+- `http://<azure-vm-ip>` (20.64.152.30)
 
 All three URLs loaded my portfolio perfectly! I tested on multiple devices (desktop, mobile) and different browsers (Chrome, Firefox) to ensure compatibility and responsiveness.
 
